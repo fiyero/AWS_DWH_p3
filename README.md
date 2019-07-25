@@ -23,6 +23,9 @@ The log files in the dataset you'll be working with are partitioned by year and 
 log_data/2018/11/2018-11-12-events.json
 log_data/2018/11/2018-11-13-events.json
 ```
+## Schema for Song Play Analysis
+Using the song and event datasets, you'll need to create a star schema optimized for queries on song play analysis. This includes the following tables.<br/>
+![p2](schema.JPG)
 
 ## Package required
 ```
@@ -40,7 +43,7 @@ import json
 2. Edit the ```dwh.cfg``` to complete the HOST, ROLE, DB_NAME....etc to connect the RedShift cluster
 3. Define all the SQL in ```sql_queries.py``` 
 4. run the ```create_tables.py``` to creat fact and dimension tables in Star Schema in RedShift
-5. run the ```etl.py``` to load the data from S3 into staging area and perform ETL process
+5. run the ```etl.py``` to load the data from S3 into staging tables on Redshift to perform ETL process, then move to analytics tables on Redshift
 6. We can perform any OLAP on AWS
 
 -------------------------------------------------------------------------------------------------------------------------------------
